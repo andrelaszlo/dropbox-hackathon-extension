@@ -1,6 +1,9 @@
+/* global chrome */
+console.log(chrome);
+
 ;(function() {
 
-  console.log('BACKGROUND SCRIPT WORKS!');
+    console.log('BACKGROUND SCRIPT WORKS!');
 
   // here we use SHARED message handlers, so all the contexts support the same
   // commands. in background, we extend the handlers with two special
@@ -38,4 +41,12 @@
   // start broadcasting loop
   helloWorld();
 
+    // Called when the user clicks on the browser action.
+    chrome.browserAction.onClicked.addListener(function(tab) {
+        // No tabs or host permissions needed!
+        console.log('Turning ' + tab.url + ' red!');
+        chrome.tabs.executeScript({
+            code: 'document.body.style.backgroundColor="red"'
+        });
+    });
 })();
