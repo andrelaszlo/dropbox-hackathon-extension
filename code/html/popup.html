@@ -7,137 +7,19 @@
   </head>
   <body>
     <form>
-      <h1>Popup</h1>
-
-      <fieldset>
-        <legend>command type</legend>
-        <table>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="type" id="type_bcast">
-                bcast
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="radio" name="type" id="type_cmd">
-                cmd
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="radio" name="type" id="type_bg">
-                bg
-              </label>
-            </td>
-          </tr>
-        </table>
-      </fieldset>
-
-      <fieldset>
-        <legend>command</legend>
-        <table>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="command" id="cmd_echo">
-                echo
-              </label>
-            </td>
-            <td>
-              <input type="text"  name="" id="cmd_echo_text">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="command" id="cmd_random">
-                random
-              </label>
-            </td>
-            <td>
-              <label>
-                <input type="radio" name="echo" id="cmd_random_sync">
-                sync
-              </label>
-              <label>
-                <input type="radio" name="echo" id="cmd_random_async">
-                async
-              </label>
-            </td>
-          </tr>
-        </table>
-      </fieldset>
-
-      <fieldset id="ctx">
-        <legend>contexts</legend>
-        <table>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="contexts" id="ctx_all">
-                all
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="contexts" id="ctx_select">
-                select
-              </label>
-            </td>
-            <td>
-              <div>
-                <label><input type="checkbox" id="ctx_select_bg"> bg</label>
-                <label><input type="checkbox" id="ctx_select_ct"> ct</label>
-                <label><input type="checkbox" id="ctx_select_dt"> dt</label>
-                <label><input type="checkbox" id="ctx_select_popup"> popup</label>
-                <label><input type="checkbox" id="ctx_select_options"> options</label>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </fieldset>
-
-      <fieldset id="tab">
-        <legend>tab id</legend>
-        <table>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="tabid" id="tab_all">
-                all
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="tabid" id="tab_same">
-                same (as me)
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label>
-                <input type="radio" name="tabid" id="tab_provided">
-                provided
-              </label>
-            </td>
-            <td>
-              <input type="number" id="tab_provided_text">
-            </td>
-          </tr>
-        </table>
-      </fieldset>
-
-      <div>
-        <button id="submit">Go!</button>
-      </div>
-
+      <p><label for="title">Title</label><br />
+      <input type="text" id="title" name="title" size="50" value="Spin Yarn From Cat Hair : TreeHugger" /></p>
+      <p><label for="url">Url</label><br />
+      <div id="url"></div>
+      <input type="text" id="url" name="url" size="50" value="http://www.treehugger.com/sustainable-fashion/spin-yarn-from-cat-hair.html" /></p>
+      <p><label for="summary">Summary</label><br />
+      <textarea id="summary" name="summary" rows="6" cols="35"></textarea></p>
+      <p><label for="tags">Tags</label><br />
+      <input type="text" id="tags" name="tags" size="50" value="" /></p>
+      <p>
+          <input id="save" type="submit" value="Save to Dropbox" />
+          <span id="status-display"></span>
+      </p>
     </form>
   </body>
 </html>
