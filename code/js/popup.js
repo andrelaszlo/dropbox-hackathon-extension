@@ -1,3 +1,8 @@
+/* global chrome */
+console.log(chrome);
+/* global document */
+console.log(document);
+
 ;(function() {
   console.log('POPUP SCRIPT WORKS!');
 
@@ -17,4 +22,12 @@
   var runner = require('./modules/runner');
 
   form.init(runner.go.bind(runner, msg));
+
+  chrome.tabs.query({
+      'active': true,
+      lastFocusedWindow: true
+  }, function (tabs) {
+    document.getElementById('title').value = tabs[0].title;
+    document.getElementById('url').value = tabs[0].url;
+  });
 })();
