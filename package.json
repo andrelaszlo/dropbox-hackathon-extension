@@ -1,7 +1,7 @@
 {
-  "name": "extension-skeleton",
-  "version": "0.1.2",
-  "description": "Bare Google Chrome extension skeleton.",
+  "name": "save-for-later",
+  "version": "0.1",
+  "description": "Save articles and notes to your Dropbox",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.5",
