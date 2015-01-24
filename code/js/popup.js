@@ -1,7 +1,13 @@
 /* global chrome */
-console.log(chrome);
 /* global document */
-console.log(document);
+
+function setClickHandler(link) {
+    var location = link.href;
+    link.onclick = function () {
+        console.log('clicked link in popup');
+        chrome.tabs.create({active: true, url: location});
+    };
+}
 
 ;(function() {
   console.log('POPUP SCRIPT WORKS!');
@@ -27,6 +33,13 @@ console.log(document);
       'active': true,
       lastFocusedWindow: true
   }, function (tabs) {
+    // Make links open in a new tab
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+      console.log("setting click handler for", links[i]);
+      setClickHandler(links[i]);
+    }
+
     document.getElementById('title').value = tabs[0].title;
     document.getElementById('url').value = tabs[0].url;
   });
